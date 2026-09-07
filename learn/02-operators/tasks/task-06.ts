@@ -17,15 +17,10 @@
 const ratePerHour: number = 8000
 const playedHours: number = 7
 const playedMinutes: number = 35
-
 const totalMinutes: number = (playedHours * 60) + playedMinutes
-
 const remainingMinutes: number = totalMinutes % 60
-
 const totalBilledHours: number = Math.floor(totalMinutes / 60) + (remainingMinutes > 0 ? 1 : 0)
-
 const totalBeforeDiscount: number = totalBilledHours * ratePerHour
-
 const discountAmount: number = totalMinutes > 300 ? totalBeforeDiscount * 0.15 : 0
 
 const finalPayment: number = totalBeforeDiscount - discountAmount

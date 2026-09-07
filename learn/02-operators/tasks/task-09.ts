@@ -40,13 +40,11 @@ const MousePrice: number = 275000
 const MouseQty: number = 2
 const MonitorStandPrice: number = 420000
 const MonitorStandQty: number = 1
-
 const VoucherValue: number = 100000
 const PremiumMember: boolean = true
 const DiscountPremium: number = 0.10
 const VatRate: number = 0.11
 const PointDivisor: number = 50000
-
 let ProductSubtotal: number = 0
 let MembershipDiscount: number = 0
 let PaymentBeforeTax: number = 0

@@ -32,7 +32,6 @@ const SolarPanelInstalled: boolean = true
 const EnergySavingMode: boolean = false
 const DiscountSolar: number = 0.20
 const DiscountSaving: number = 0.05
-
 let TotalConsumption: number = 0
 let ElectricityBill: number = 0
 let Sub1Discount: number = 0
@@ -41,7 +40,6 @@ let FinalBill: number = 0
 
 TotalConsumption = CurrentMeter - PreviousMeter
 ElectricityBill = TotalConsumption * PricePerKwh
-
 Sub1Discount = SolarPanelInstalled === true ? ElectricityBill * DiscountSolar : 0
 Sub2Discount = EnergySavingMode === false ? 0 : ElectricityBill * DiscountSaving
 FinalBill = ElectricityBill - Sub1Discount - Sub2Discount

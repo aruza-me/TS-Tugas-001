@@ -32,6 +32,7 @@ let Sub1Payment : number = 0
 let Sub2Payment : number = 0
 let Tax : number = 0
 const freebreakfast :boolean = true ? VIPMember===true || NightStayed>=3 : false
+
 Sub1Payment = (RoomPrice*NightStayed)*Discountvip
 Sub2Payment = (RoomPrice*NightStayed)-Sub1Payment+ServiceCharge
 Tax = Sub2Payment*0.11
