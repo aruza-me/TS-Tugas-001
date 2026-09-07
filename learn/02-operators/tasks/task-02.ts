@@ -20,7 +20,7 @@ const TuitionPaid : boolean = true
 const isEligible : boolean = (FinalScore >= 75) && (Attendance >= 90) && (TuitionPaid === true)
 
 console.log("Final Score:",FinalScore)
-console.log(`Attendance: ${Attendance}%`)
+console.log("Attendance: " + Attendance + "%")
 if (TuitionPaid === true ){console.log("Tuition Paid: Yes");}
 else {console.log("Tuition Paid: No");}
 if (isEligible === true ){console.log("Is the student eligible for graduation? Yes");}

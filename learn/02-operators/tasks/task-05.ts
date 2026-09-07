@@ -40,16 +40,12 @@ const familyIncome: number = 4200000
 const competitionCount: number = 4
 const hasDisciplinaryRecord: boolean = false
 const documentsComplete: boolean = true
-
 const totalBudget: number = 500000000
-
-const IsEligible: boolean = (gpa >= 3.75) &&  (familyIncome < 5000000) &&  (competitionCount >= 3) &&  (hasDisciplinaryRecord === false) && (documentsComplete === true)
-
-const scholarshipAmount: number = isEligible ? 12000000 : 0
-
+const IsEligible: boolean = (gpa >= 3.75) &&  (familyIncome < 5000000) && (competitionCount >= 3) && (hasDisciplinaryRecord === false) && (documentsComplete === true)
+const scholarshipAmount: number = IsEligible ? 12000000 : 0
 const remainingBudget: number = totalBudget - scholarshipAmount
 
-console.log(`Student Name: ${studentName}`)
-console.log(`Is student accepted for scholarship? ${IsEligible ? "Yes" : "No"}`)
-console.log(`Scholarship Amount: Rp${scholarshipAmount}`)
-console.log(`Remaining University Budget: Rp${remainingBudget}`)
+console.log("Student Name:" , studentName)
+console.log("Is student accepted for scholarship? " + (IsEligible ? "Yes" : "No"))
+console.log("Scholarship Amount: Rp" + scholarshipAmount)
+console.log("Remaining University Budget: Rp" + remainingBudget)

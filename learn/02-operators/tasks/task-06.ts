@@ -29,9 +29,9 @@ const totalBeforeDiscount: number = totalBilledHours * ratePerHour
 const discountAmount: number = totalMinutes > 300 ? totalBeforeDiscount * 0.15 : 0
 
 const finalPayment: number = totalBeforeDiscount - discountAmount
-console.log(`Total playing time: ${totalMinutes} minutes`)
-console.log(`Remaining minutes after full hours: ${remainingMinutes} minutes`)
-console.log(`Total billed hours: ${totalBilledHours} hours`)
-console.log(`Total payment before discount: Rp${totalBeforeDiscount}`)
-console.log(`Discount amount (15%): Rp${discountAmount}`)
-console.log(`Final payment: Rp${finalPayment}`)
+console.log("Total playing time: " + totalMinutes + " minutes")
+console.log("Remaining minutes after full hours: " + remainingMinutes + " minutes")
+console.log("Total billed hours: " + totalBilledHours + " hours")
+console.log("Total payment before discount: Rp" + totalBeforeDiscount)
+console.log("Discount amount (15%): Rp" + discountAmount)
+console.log("Final payment: Rp" + finalPayment)

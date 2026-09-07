@@ -45,7 +45,6 @@ ElectricityBill = TotalConsumption * PricePerKwh
 Sub1Discount = SolarPanelInstalled === true ? ElectricityBill * DiscountSolar : 0
 Sub2Discount = EnergySavingMode === false ? 0 : ElectricityBill * DiscountSaving
 FinalBill = ElectricityBill - Sub1Discount - Sub2Discount
-
 const GreenEnergyProgram: boolean = SolarPanelInstalled === true && TotalConsumption < 300 && EnergySavingMode === false ? false : true
 
 console.log("Total energy consumption: ", TotalConsumption)

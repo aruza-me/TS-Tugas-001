@@ -31,15 +31,15 @@ const mousePadPrice: number = 120000
 const mousePadQty: number = 1
 const isPremium: boolean = true
 const subtotal: number = (keyboardPrice * keyboardQty) + (mousePrice * mouseQty) + (mousePadPrice * mousePadQty)
-const totalItems: number = 0
+const totalItems: number = keyboardQty + mouseQty + mousePadQty
 
 const DiscountAmount: number = subtotal > 1000000 ? subtotal * 0.1 : 0
 const shippingFee: number = isPremium ? 0 : 50000
 
-const finaLPayment: number = subtotal - discountAmount + shippingFee
+const finaLPayment: number = subtotal - DiscountAmount + shippingFee
 
-console.log(`Subtotal: Rp${subtotal}`)
-console.log(`Total Items: ${totalItems}`)
-console.log(`Discount Amount: Rp${DiscountAmount}`)
-console.log(`Shipping Fee: Rp${shippingFee} ${isPremium ? "(Premium Member)" : ""}`)
-console.log(`Final Payment: Rp${finaLPayment}`)
+console.log("Subtotal: Rp" + subtotal)
+console.log("Total Items: " + totalItems)
+console.log("Discount Amount: Rp" + DiscountAmount)
+console.log("Shipping Fee: Rp" + shippingFee + " " + (isPremium ? "(Premium Member)" : ""))
+console.log("Final Payment: Rp" + finaLPayment)

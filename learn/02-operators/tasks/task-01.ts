@@ -23,7 +23,7 @@ const studentCouncilDiscount: number = 10000
 const totalFoodPrice: number = friedRicePrice * friedRiceQuantity
 const totalDrinkPrice: number = waterPrice * waterQuantity
 const TotalBeforeDiscount: number = totalFoodPrice + totalDrinkPrice
-const FinalPayment: number = totalBeforeDiscount - studentCouncilDiscount
+const FinalPayment: number = TotalBeforeDiscount - studentCouncilDiscount
 
 console.log("Total price of fried rice: Rp" + totalFoodPrice)
 console.log("Total price of drinks: Rp" + totalDrinkPrice)
