@@ -7,10 +7,18 @@
  * | ----------------- | ------------- |
  * | Employee Name     | Dimas Pratama |
  * | Performance Score | 78            |
- * 
+ *
  * Tasks:
  * 1. Declare the variables.
  * 2. Use an if...else statement.
- * 3. Display the evaluation result. If eligible will display "Bonus Approved", 
+ * 3. Display the evaluation result. If eligible will display "Bonus Approved",
  * otherwise display "Bonus not approved"
  */
+const EmployeeName: string = "Dimas Pratama";
+const PerformanceScore: number = 78;
+
+if (PerformanceScore >= 80) {
+  console.log("Bonus Approved");
+} else {
+  console.log("Bonus not approved");
+}

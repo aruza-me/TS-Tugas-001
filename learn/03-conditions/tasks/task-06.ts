@@ -8,7 +8,7 @@
  * 3. Otherwise:
  *  - Patients with health insurance are assigned to the Insurance Registration Counter.
  *  - Patients without insurance are assigned to the General Registration Counter.
- * 
+ *
  * Today's patient information:
  * | Information        | Value      |
  * | ------------------ | ---------- |
@@ -17,9 +17,29 @@
  * | Has Appointment    | Yes        |
  * | Age                | 67         |
  * | Has Insurance      | Yes        |
- * 
- * Tasks: 
+ *
+ * Tasks:
  * 1. Declare all required variables.
  * 2. Implement the hospital workflow using conditional statements.
  * 3. Display the patient's destination.
  */
+const patientName: string = "Siti Rahma";
+const criticalCondition: boolean = false;
+const hasAppointment: boolean = true;
+const age: number = 67;
+const hasInsurance: boolean = true;
+if (criticalCondition) {
+  console.log("Assigned to Emergency Room");
+} else if (hasAppointment === true) {
+  if (age >= 60) {
+    console.log("Assigned to Priority Queue");
+  } else {
+    console.log("Assigned to Regular Queue");
+  }
+} else {
+  if (hasInsurance === true) {
+    console.log("Assigned to Insurance Registration Counter");
+  } else {
+    console.log("Assigned to General Registration Counter");
+  }
+}
