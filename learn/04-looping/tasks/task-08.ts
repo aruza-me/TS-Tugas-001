@@ -1,11 +1,11 @@
 /**
  * The warehouse checks customer orders before shipping based on array below.
- * 
+ *
  * Business Rules
  * An order is ready to ship only if:
  * - Payment has been completed.
  * - Stock is available.
- * 
+ *
  * Student Task:
  * Loop through every order and calculate:
  * - Number of orders ready to ship
@@ -19,5 +19,25 @@ const orders = [
   { id: "ORD003", paid: true, stockAvailable: false },
   { id: "ORD004", paid: true, stockAvailable: true },
   { id: "ORD005", paid: false, stockAvailable: false },
-  { id: "ORD006", paid: true, stockAvailable: true }
+  { id: "ORD006", paid: true, stockAvailable: true },
 ];
+let readyToShipCount: number = 0;
+let unpaidCount: number = 0;
+let waitingForStockCount: number = 0;
+const readyToShipOrders: string[] = [];
+for (let i = 0; i < orders.length; i++) {
+  if (orders[i].paid && orders[i].stockAvailable) {
+    readyToShipCount++;
+    readyToShipOrders.push(orders[i].id);
+  }
+  if (!orders[i].paid) {
+    unpaidCount++;
+  }
+  if (!orders[i].stockAvailable) {
+    waitingForStockCount++;
+  }
+}
+console.log(`Number of Orders Ready to Ship: ${readyToShipCount}`);
+console.log(`Number of Unpaid Orders: ${unpaidCount}`);
+console.log(`Number of Orders Waiting for Stock: ${waitingForStockCount}`);
+console.log(`Order IDs Ready to Ship: ${readyToShipOrders.join(", ")}`);
