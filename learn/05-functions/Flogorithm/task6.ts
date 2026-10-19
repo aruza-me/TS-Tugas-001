@@ -1,28 +1,15 @@
-/**
- * Activity 6: BMI Category Function
- * 
- * Flowgorithm Concept:
- * - Decision / Conditional statements (If-Else) inside a function.
- * 
- * Description:
- * Create a function named `BMICategory` that takes `weight` and `height` as parameters,
- * calculates the BMI, and returns the category as text (Underweight, Normal, Overweight, Obese)
- * using conditional statements.
- */
 
-// Function Definition
 function BMICategory(weight: number, height: number): string {
-  // If height is provided in centimeters (e.g. 175), convert to meters (1.75)
+
   const heightInMeters: number = height > 3 ? height / 100 : height;
 
   if (heightInMeters <= 0 || weight <= 0) {
     throw new Error("Weight and height must be positive numbers.");
   }
 
-  // Formula: BMI = weight (kg) / (height (m) ^ 2)
   const bmi: number = weight / (heightInMeters * heightInMeters);
 
-  // Conditional categorization based on standard BMI thresholds
+
   if (bmi < 18.5) {
     return "Underweight";
   } else if (bmi < 25.0) {
@@ -34,7 +21,7 @@ function BMICategory(weight: number, height: number): string {
   }
 }
 
-// Main Program
+
 console.log("=== Activity 6: BMI Category Function ===");
 
 const testPeople = [

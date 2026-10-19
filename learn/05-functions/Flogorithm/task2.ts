@@ -1,20 +1,8 @@
-/**
- * Activity 2: Square Calculator
- * 
- * Flowgorithm Concept:
- * - Function with parameter and return value.
- * 
- * Description:
- * Create a function named `Square` that takes a number as a parameter and returns
- * the squared value. Call the function and print the result.
- */
 
-// Function Definition
 function Square(num: number): number {
   return num * num;
 }
 
-// Main Program
 console.log("=== Activity 2: Square Calculator ===");
 
 const number1: number = 5;
