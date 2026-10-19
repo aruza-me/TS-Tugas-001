@@ -22,7 +22,13 @@
  * - 1 void function to display the report.
  * 
  */
-const submissions = [
+type Submission = {
+  student: string;
+  submitted: boolean;
+  score: number;
+};
+
+const submissions: Submission[] = [
     {
         student: "Alya",
         submitted: true,
@@ -54,3 +60,87 @@ const submissions = [
         score: 96
     }
 ];
+
+function getTotalStudents(submissions: Submission[]): number {
+  return submissions.length;
+}
+
+function countSubmittedAssignments(submissions: Submission[]): number {
+  let count = 0;
+  for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].submitted) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function countMissingAssignments(submissions: Submission[]): number {
+  return getTotalStudents(submissions) - countSubmittedAssignments(submissions);
+}
+
+function countPassedStudents(submissions: Submission[]): number {
+  let count = 0;
+  for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].submitted && submissions[i].score >= 75) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function countRevisionStudents(submissions: Submission[]): number {
+  let count = 0;
+  for (let i = 0; i < submissions.length; i++) {
+    if (submissions[i].submitted && submissions[i].score < 75) {
+      count++;
+    }
+  }
+  return count;
+}
+
+function calculateTotalScore(submissions: Submission[]): number {
+  let total = 0;
+  for (let i = 0; i < submissions.length; i++) {
+    total += submissions[i].score;
+  }
+  return total;
+}
+
+function calculateAverageScore(submissions: Submission[]): number {
+  return calculateTotalScore(submissions) / getTotalStudents(submissions);
+}
+
+function findHighestScore(submissions: Submission[]): number {
+  let highest = submissions[0].score;
+  for (let i = 1; i < submissions.length; i++) {
+    if (submissions[i].score > highest) {
+      highest = submissions[i].score;
+    }
+  }
+  return highest;
+}
+
+function findLowestScore(submissions: Submission[]): number {
+  let lowest = submissions[0].score;
+  for (let i = 1; i < submissions.length; i++) {
+    if (submissions[i].score < lowest) {
+      lowest = submissions[i].score;
+    }
+  }
+  return lowest;
+}
+
+function displayReport(submissions: Submission[]): void {
+  console.log(`LMS Assignment Submission Report:`);
+  console.log(`Total Students: ${getTotalStudents(submissions)}`);
+  console.log(`Submitted Assignments: ${countSubmittedAssignments(submissions)}`);
+  console.log(`Missing Assignments: ${countMissingAssignments(submissions)}`);
+  console.log(`Passed Students: ${countPassedStudents(submissions)}`);
+  console.log(`Students Requiring Revision: ${countRevisionStudents(submissions)}`);
+  console.log(`Average Score: ${calculateAverageScore(submissions).toFixed(2)}`);
+  console.log(`Highest Score: ${findHighestScore(submissions)}`);
+  console.log(`Lowest Score: ${findLowestScore(submissions)}`);
+}
+
+displayReport(submissions);
