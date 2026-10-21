@@ -6,21 +6,21 @@
  * - Completed enrollments
  * - Incomplete enrollments
  * - Completion percentage
- * 
+ *
  * Academic Statistics:
  * - Highest score
  * - Lowest score
  * - Average score
  * - Students with passing scores (≥ 75)
- * 
+ *
  * Course Statistics:
  * - Number of students enrolled in each course
  * - Average score for each course
- * 
+ *
  * Learning Statistics:
  * - Total learning hours
  * - Average learning duration
- * 
+ *
  * Student Tasks:
  * You must design your own program architecture.
  * Requirements
@@ -35,70 +35,70 @@
  */
 
 type Enrollment = {
-    student: string;
-    course: string;
-    completed: boolean;
-    score: number;
-    duration: number;
+  student: string;
+  course: string;
+  completed: boolean;
+  score: number;
+  duration: number;
 };
 
 const enrollments: Enrollment[] = [
-    {
-        student: "Alya",
-        course: "TypeScript",
-        completed: true,
-        score: 91,
-        duration: 38
-    },
-    {
-        student: "Budi",
-        course: "TypeScript",
-        completed: false,
-        score: 45,
-        duration: 12
-    },
-    {
-        student: "Citra",
-        course: "Database",
-        completed: true,
-        score: 87,
-        duration: 42
-    },
-    {
-        student: "Dimas",
-        course: "Backend",
-        completed: true,
-        score: 96,
-        duration: 40
-    },
-    {
-        student: "Eka",
-        course: "Database",
-        completed: false,
-        score: 60,
-        duration: 18
-    },
-    {
-        student: "Fajar",
-        course: "Backend",
-        completed: true,
-        score: 82,
-        duration: 35
-    },
-    {
-        student: "Gita",
-        course: "TypeScript",
-        completed: true,
-        score: 88,
-        duration: 36
-    },
-    {
-        student: "Hana",
-        course: "Backend",
-        completed: false,
-        score: 70,
-        duration: 20
-    }
+  {
+    student: "Alya",
+    course: "TypeScript",
+    completed: true,
+    score: 91,
+    duration: 38,
+  },
+  {
+    student: "Budi",
+    course: "TypeScript",
+    completed: false,
+    score: 45,
+    duration: 12,
+  },
+  {
+    student: "Citra",
+    course: "Database",
+    completed: true,
+    score: 87,
+    duration: 42,
+  },
+  {
+    student: "Dimas",
+    course: "Backend",
+    completed: true,
+    score: 96,
+    duration: 40,
+  },
+  {
+    student: "Eka",
+    course: "Database",
+    completed: false,
+    score: 60,
+    duration: 18,
+  },
+  {
+    student: "Fajar",
+    course: "Backend",
+    completed: true,
+    score: 82,
+    duration: 35,
+  },
+  {
+    student: "Gita",
+    course: "TypeScript",
+    completed: true,
+    score: 88,
+    duration: 36,
+  },
+  {
+    student: "Hana",
+    course: "Backend",
+    completed: false,
+    score: 70,
+    duration: 20,
+  },
 ];
 
 function getTotalEnrollments(data: Enrollment[]): number {

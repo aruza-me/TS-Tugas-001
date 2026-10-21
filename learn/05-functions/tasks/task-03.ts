@@ -21,4 +21,4 @@ function calculateTotalPrice(prices: number[]) {
   }
   return total;
 }
-console.log(`The Total of the pruchace is ${calculateTotalPrice(prices)}`);
+console.log(`The Total of the purchace is ${calculateTotalPrice(prices)}`);
