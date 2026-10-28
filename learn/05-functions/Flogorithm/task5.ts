@@ -1,13 +1,15 @@
 function Factorial(n: number): number {
+  if (n < 0) {
+    console.log(`Factorial is not defined for negative number`);
+    return NaN;
+  }
   let result: number = 1;
   for (let i = 1; i <= n; i++) {
     result *= i;
   }
   return result;
 }
-console.log("=== Activity 5: Factorial Calculator ===");
-const numbersToTest: number[] = [0, 1, 4, 5, 7];
-for (let i = 0; i < numbersToTest.length; i++) {
-  const result: number = Factorial(numbersToTest[i]);
-  console.log(`${numbersToTest[i]}! = ${result}`);
-}
+console.log("=== Factorial Calculator ===");
+const number: number = 5;
+const result: number = Factorial(number);
+console.log(`${number}! = ${result}`);

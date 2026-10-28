@@ -1,22 +1,14 @@
-function FinalPrice(price: number, discount: number = 0): number {
-  const effectiveDiscount: number = discount === 0 ? 5 : discount;
-  const discountAmount: number = (price * effectiveDiscount) / 100;
+function FinalPrice(price: number, discount: number): number {
+  const finalDiscount: number = discount === 0 ? 5 : discount;
+  const discountAmount: number = (price * finalDiscount) / 100;
   return price - discountAmount;
 }
-console.log(
-  "=== Activity 4: Coffee Price Calculator with Default Discount ===",
-);
-const coffeePrice: number = 30000;
-const priceWithDefaultDiscount: number = FinalPrice(coffeePrice, 0);
-console.log(`Original Price: Rp ${coffeePrice.toLocaleString("id-ID")}`);
-console.log(
-  `With 0% input (Default 5% applied): Rp ${priceWithDefaultDiscount.toLocaleString("id-ID")}`,
-);
+console.log("=== COFFEE PRICE CALCULATOR ===");
+const coffeePrice: number = 50000;
+const priceDefaultDiscount: number = FinalPrice(coffeePrice, 0);
 const specificDiscount: number = 15;
-const priceWithSpecificDiscount: number = FinalPrice(
-  coffeePrice,
-  specificDiscount,
-);
-console.log(
-  `With ${specificDiscount}% discount: Rp ${priceWithSpecificDiscount.toLocaleString("id-ID")}`,
-);
+const priceSpecificDiscount: number = FinalPrice(coffeePrice, specificDiscount);
+
+console.log(`Original Price: Rp ${coffeePrice.toLocaleString("id-ID")}`);
+console.log(`With default 5% discount: Rp ${priceDefaultDiscount.toLocaleString("id-ID")}`);
+console.log(`With ${specificDiscount}% discount: Rp ${priceSpecificDiscount.toLocaleString("id-ID")}`);

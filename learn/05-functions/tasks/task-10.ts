@@ -274,3 +274,4 @@ function displayDashboard(data: Enrollment[]): void {
 }
 
 displayDashboard(enrollments);
+export { }

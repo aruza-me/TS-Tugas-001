@@ -64,3 +64,4 @@ function displayReport(scores: number[]): void {
   console.log(`Number of Students who Passed: ${countPassedStudents(scores)}`);
 }
 displayReport(scores);
+export { }

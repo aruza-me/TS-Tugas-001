@@ -29,36 +29,36 @@ type Submission = {
 };
 
 const submissions: Submission[] = [
-    {
-        student: "Alya",
-        submitted: true,
-        score: 90
-    },
-    {
-        student: "Budi",
-        submitted: false,
-        score: 0
-    },
-    {
-        student: "Citra",
-        submitted: true,
-        score: 84
-    },
-    {
-        student: "Dimas",
-        submitted: true,
-        score: 72
-    },
-    {
-        student: "Eka",
-        submitted: false,
-        score: 0
-    },
-    {
-        student: "Fajar",
-        submitted: true,
-        score: 96
-    }
+  {
+    student: "Alya",
+    submitted: true,
+    score: 90
+  },
+  {
+    student: "Budi",
+    submitted: false,
+    score: 0
+  },
+  {
+    student: "Citra",
+    submitted: true,
+    score: 84
+  },
+  {
+    student: "Dimas",
+    submitted: true,
+    score: 72
+  },
+  {
+    student: "Eka",
+    submitted: false,
+    score: 0
+  },
+  {
+    student: "Fajar",
+    submitted: true,
+    score: 96
+  }
 ];
 
 function getTotalStudents(submissions: Submission[]): number {
@@ -98,7 +98,6 @@ function countRevisionStudents(submissions: Submission[]): number {
   }
   return count;
 }
-
 function calculateTotalScore(submissions: Submission[]): number {
   let total = 0;
   for (let i = 0; i < submissions.length; i++) {
@@ -106,11 +105,9 @@ function calculateTotalScore(submissions: Submission[]): number {
   }
   return total;
 }
-
 function calculateAverageScore(submissions: Submission[]): number {
   return calculateTotalScore(submissions) / getTotalStudents(submissions);
 }
-
 function findHighestScore(submissions: Submission[]): number {
   let highest = submissions[0].score;
   for (let i = 1; i < submissions.length; i++) {
@@ -130,7 +127,6 @@ function findLowestScore(submissions: Submission[]): number {
   }
   return lowest;
 }
-
 function displayReport(submissions: Submission[]): void {
   console.log(`LMS Assignment Submission Report:`);
   console.log(`Total Students: ${getTotalStudents(submissions)}`);
@@ -144,3 +140,4 @@ function displayReport(submissions: Submission[]): void {
 }
 
 displayReport(submissions);
+export { }

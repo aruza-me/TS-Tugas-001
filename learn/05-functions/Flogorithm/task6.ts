@@ -10,19 +10,10 @@ function BMICategory(weight: number, height: number): string {
     return "Obese";
   }
 }
-
-console.log("=== Activity 6: BMI Category Function ===");
+console.log("=== BMI Category Function ===");
 const testPeople = [
-  { name: "Andi", weight: 48, height: 1.7 },
-  { name: "Budi", weight: 65, height: 1.72 },
-  { name: "Citra", weight: 80, height: 1.68 },
-  { name: "Dewi", weight: 95, height: 1.65 },
+  { name: "asep", weight: 55, height: 1.65 },
 ];
-
-for (const person of testPeople) {
-  const category: string = BMICategory(person.weight, person.height);
-  const bmiValue: number = person.weight / (person.height * person.height);
-  console.log(
-    `${person.name} (${person.weight} kg, ${person.height} m) -> BMI: ${bmiValue.toFixed(1)} -> Category: ${category}`,
-  );
-}
+testPeople.forEach(person => {
+  console.log(`name: ${person.name} - (${person.weight} kg, ${person.height} m) -> BMI: ${(person.weight / (person.height * person.height)).toFixed(2)} -> Category: ${BMICategory(person.weight, person.height)}`);
+});
