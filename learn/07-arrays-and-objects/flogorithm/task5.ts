@@ -1,20 +1,17 @@
-const members: string[] = ["Budi", "Siti", "Andi", "Fikri", "Dewi"];
-const searchTerm: string = "Fikri";
-
+const members: string[] = ["Rehan", "Aida", "Azura", "Fiqri", "Nada"];
+const searchTerm: string = "Azura";
 console.log("===== STUDENT NAME SEARCH =====");
 console.log(`Searching for: ${searchTerm}`);
-
-let foundIndex: number = -1;
-
-for (let i: number = 0; i < members.length; i++) {
+let foundIndex: number = 0;
+for (let i = 0; i < members.length; i++) {
   if (members[i] === searchTerm) {
-    foundIndex = i;
+    foundIndex = i + 1;
     break;
   }
 }
-
-if (foundIndex !== -1) {
+if (foundIndex !== 0) {
   console.log(`Result : FOUND at index ${foundIndex}`);
 } else {
   console.log("Result : NOT FOUND");
 }
+//saya bikin i+1 karena array itu mulai dari 0 sedangkan nomor urut mulai dari 1
