@@ -5,18 +5,12 @@ const Staffdata = [
   { name: "Amel", salesAmount: 1600000 },
 ];
 console.log("===== SALES LEADERBOARD =====");
-for (let i = 0; i < Staffdata.length; i++) {
-  console.log(`${Staffdata[i].name.padEnd(9)}: Rp${Staffdata[i].salesAmount.toLocaleString("id-ID")}`);
-}
-let highestIndex: number = 0;
-let lowestIndex: number = 0;
-for (let i = 1; i < Staffdata.length; i++) {
-  if (Staffdata[i].salesAmount > Staffdata[highestIndex].salesAmount) {
-    highestIndex = i;
-  }
-  if (Staffdata[i].salesAmount < Staffdata[lowestIndex].salesAmount) {
-    lowestIndex = i;
-  }
-}
-console.log(`${"Top Performer".padEnd(17)}: ${Staffdata[highestIndex].name} (Rp${Staffdata[highestIndex].salesAmount.toLocaleString("id-ID")})`);
-console.log(`${"Lowest Performer".padEnd(17)}: ${Staffdata[lowestIndex].name} (Rp${Staffdata[lowestIndex].salesAmount.toLocaleString("id-ID")})`);
+Staffdata.map((staff) => {
+  console.log(`${staff.name.padEnd(9)}: Rp${staff.salesAmount.toLocaleString("id-ID")}`);
+});
+const sortedStaff = [...Staffdata].sort((a, b) => b.salesAmount - a.salesAmount);
+const topPerformer = sortedStaff[0];
+const lowestPerformer = sortedStaff[sortedStaff.length - 1];
+console.log(`${"Top Performer".padEnd(17)}: ${topPerformer.name} (Rp${topPerformer.salesAmount.toLocaleString("id-ID")})`);
+console.log(`${"Lowest Performer".padEnd(17)}: ${lowestPerformer.name} (Rp${lowestPerformer.salesAmount.toLocaleString("id-ID")})`);
+export {};

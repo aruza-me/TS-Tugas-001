@@ -23,3 +23,25 @@ const attendance = [
     { studentId: 3, status: "present" },
     { studentId: 4, status: "late" },
 ];
+
+const studentAttendance = attendance.map((a) => {
+    const student = students.find((s) => s.id === a.studentId);
+    return { name: student ? student.name : "", status: a.status };
+});
+
+const presentStudents = studentAttendance
+    .filter((s) => s.status === "present")
+    .map((s) => s.name);
+const absentStudents = studentAttendance
+    .filter((s) => s.status === "absent")
+    .map((s) => s.name);
+const lateStudents = studentAttendance
+    .filter((s) => s.status === "late")
+    .map((s) => s.name);
+
+console.log("1. Present:", presentStudents);
+console.log("2. Absent:", absentStudents);
+console.log("3. Late:", lateStudents);
+console.log("4. Attendance List:", studentAttendance);
+
+export { };

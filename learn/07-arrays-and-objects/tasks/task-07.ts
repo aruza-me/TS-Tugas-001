@@ -35,3 +35,33 @@ const orders = [
         ],
     },
 ];
+
+const completedOrders = orders.filter((o) => o.status === "completed");
+
+const orderTotals = orders.map((o) => {
+    const total = o.items.reduce((sum, item) => sum + item.price * item.quantity, 0);
+    return { id: o.id, customer: o.customer, status: o.status, total };
+});
+const topCustomer = [...orderTotals]
+    .filter((o) => o.status === "completed")
+    .sort((a, b) => b.total - a.total)[0];
+
+const totalCompletedRevenue = orderTotals
+    .filter((o) => o.status === "completed")
+    .reduce((sum, o) => sum + o.total, 0);
+const purchasedProducts: string[] = [];
+for (let i = 0; i < completedOrders.length; i++) {
+    for (let j = 0; j < completedOrders[i].items.length; j++) {
+        const prod = completedOrders[i].items[j].product;
+        if (!purchasedProducts.includes(prod)) {
+            purchasedProducts.push(prod);
+        }
+    }
+}
+console.log("1. Completed Orders:", completedOrders);
+console.log("2. Order Totals:", orderTotals);
+console.log("3. Top Customer:", topCustomer);
+console.log("4. Total Revenue (Completed):", totalCompletedRevenue);
+console.log("5. Purchased Products:", purchasedProducts);
+
+export { };
